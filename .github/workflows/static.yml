@@ -28,19 +28,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # - name: Copy files securely via SSH 🔒
-      #   uses: ArthurYdalgo/github-action-scp@0.7.4
-      #   with:
-      #     local: .
-      #     remote: ${{ secrets.PATH }}
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.YUG_USERNAME }}
-      #     password: ${{ secrets.YUG_PASSWORD }}
-      #     port: ${{ secrets.PORT }}
-      - name : testing
-        uses: github/command@v1.1.0
+      - name: Copy files securely via SSH 🔒
+        uses: ArthurYdalgo/github-action-scp@0.7.4
         with:
-          command: cd $GITHUB_ACTION_REPOSITORY && ls
+          local: $GITHUB_ACTION_REPOSITORY
+          remote: ${{ secrets.PATH }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.YUG_USERNAME }}
+          password: ${{ secrets.YUG_PASSWORD }}
+          port: ${{ secrets.PORT }}
+
       
           
           
