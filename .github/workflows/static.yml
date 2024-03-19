@@ -37,6 +37,7 @@ jobs:
           host: 82.180.167.190
           username: u358688394
           password: ${{ secrets.YUG_PASSWORD }}
+          port: 65002
           
         
       
