@@ -31,7 +31,7 @@ jobs:
       - name: Copy files securely via SSH 🔒
         uses: ArthurYdalgo/github-action-scp@0.7.4
         with:
-          local: ${GITHUB_ACTION_PATH}
+          local: "."
           remote: ${{ secrets.PATH }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.YUG_USERNAME }}
